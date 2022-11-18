@@ -20,6 +20,8 @@ Route::prefix('/v1')->group(function() {
     Route::post('/billing/deposit', [BillingController::class, 'deposit']);
     Route::post('/billing/buy/cookies', [BillingController::class, 'buyCookies']);
 
+    Route::get('/user', [AuthController::class, 'user'])->middleware('auth:sanctum');
+
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
 });

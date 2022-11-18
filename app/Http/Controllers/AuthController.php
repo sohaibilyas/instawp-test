@@ -62,4 +62,9 @@ class AuthController extends Controller
             ]
         ]);
     }
+
+    public function user()
+    {
+        return auth()->user();
+    }
 }
